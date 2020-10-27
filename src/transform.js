@@ -24,6 +24,7 @@ const travelDirSync = (dir, outdir, cb) => {
 
 const transformFiles = file => {
   return transformFileSync(file, {
+    babelrc: false,
     presets: ['@babel/preset-env', '@babel/preset-react'],
     plugins: ['@babel/plugin-transform-runtime'],
   }).code
