@@ -1,0 +1,49 @@
+{
+  "name": "ibuild",
+  "version": "0.0.4",
+  "description": "build tool for iseeu framework",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "kcd-scripts lint",
+    "test": "kcd-scripts test",
+    "validate": "kcd-scripts validate",
+    "start": "node src/index.js h5",
+    "prepublish": "npm run lint",
+    "postinstall": "echo \"ibuild: build anywhere --!\""
+  },
+  "bin": {
+    "ibuild-h5": "/src/bin/h5.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "kcd-scripts pre-commit"
+    }
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/me-hotel/ibuild.git"
+  },
+  "keywords": [
+    "buil",
+    "tool"
+  ],
+  "author": "DSG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/me-hotel/ibuild/issues"
+  },
+  "homepage": "https://github.com/me-hotel/ibuild#readme",
+  "devDependencies": {
+    "kcd-scripts": "^6.6.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "rimraf": "^3.0.2"
+  }
+}
