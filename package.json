@@ -1,6 +1,6 @@
 {
-  "name": "ibuild",
-  "version": "0.0.6",
+  "name": "@me-hotel/ibuild",
+  "version": "0.0.7",
   "description": "build tool for iseeu framework",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "postinstall": "echo \"ibuild: build anywhere --!\""
   },
   "bin": {
-    "ibuild-h5": "/src/bin/h5.js"
+    "ibuild-h5": "src/bin/h5.js"
   },
   "husky": {
     "hooks": {
@@ -44,6 +44,7 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass": "^1.27.1"
   }
 }
