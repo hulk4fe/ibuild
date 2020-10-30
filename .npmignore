@@ -3,3 +3,5 @@ node_modules
 .npmignore
 .eslintignore
 start.js
+test
+es

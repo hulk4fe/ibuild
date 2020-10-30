@@ -1,3 +1,3 @@
 const ibuild = require('./src/index')
 
-ibuild({})
+ibuild({beta: true})
