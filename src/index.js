@@ -1,16 +1,30 @@
-const {convertType} = require('./lib/tool')
+const {program} = require('commander')
 const {print} = require('./lib/utils')
+const {convertType} = require('./lib/tool')
 
-// beta: local develop mode, default false
-// type: h5 is runing h5 build
-const ibuild = ({type = '', beta = false}) => {
-  print('entry', type, beta)
-  if (beta) {
-    const env = process.argv.slice(2)
-    convertType(env[0] || '', {filename: 'test'})
-  } else {
-    convertType(type || '')
-  }
+// eslint-disable-next-line import/order
+const _program = program
+  .version(require('../package.json').version)
+  .usage(
+    `ibuild [options]
+  Arguments:
+    options  build options 
+             -m mode
+             -i input
+             -o output`,
+  )
+  .option('-m, --mode <mode>', 'build mode')
+  .option('-i, --input <input>', 'input source file entry')
+  .option('-o, --output <output>', 'output of bundle')
+  .parse(process.argv)
+
+// eslint-disable-next-line consistent-return
+const ibuild = () => {
+  const {mode = 'h5', input, output} = _program
+  print('entry', mode, input, output)
+  if (!input || !output)
+    return print('error', 'must have input and ouput option')
+  convertType({mode, input, output})
 }
 
 module.exports = ibuild

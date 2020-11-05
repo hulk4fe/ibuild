@@ -2,4 +2,4 @@
 
 const ibuild = require('..')
 
-ibuild({type: 'h5'})
+ibuild()

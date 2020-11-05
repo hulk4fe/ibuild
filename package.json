@@ -1,18 +1,18 @@
 {
   "name": "@me-hotel/ibuild",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "build tool for iseeu framework",
   "main": "src/index.js",
   "scripts": {
     "lint": "kcd-scripts lint",
     "test": "kcd-scripts test",
     "validate": "kcd-scripts validate",
-    "start": "node start h5",
+    "start": "node start --mode h5 --input test --output bundle",
     "prepublish": "npm run lint",
-    "postinstall": "echo \"ibuild: build anywhere --!\""
+    "postinstall": "node src/bin/postinstall.js"
   },
   "bin": {
-    "ibuild-h5": "src/bin/h5.js"
+    "ibuild": "src/bin/index.js"
   },
   "husky": {
     "hooks": {
@@ -44,6 +44,7 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+    "commander": "^6.2.0",
     "rimraf": "^3.0.2",
     "sass": "^1.27.1"
   }
