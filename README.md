@@ -15,5 +15,3 @@ build tool for ui framework
 1. sdk/lib build mode
 2. webpack build mode
 3. source code compile
-4. input param detect , help console output
-5. src option, out option, mode option(h5), beta option
