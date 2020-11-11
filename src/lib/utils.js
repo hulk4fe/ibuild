@@ -11,6 +11,9 @@ const isArray = obj => {
 const isFuntion = obj => {
   return typeOf(obj) === 'Function'
 }
+const isString = obj => {
+  return typeOf(obj) === 'String'
+}
 const print = (module = '', ...msg) => {
   /* eslint no-console: ["error", { allow: ["info", "warn"] }] */
   msg = msg.map(el => {
@@ -30,4 +33,5 @@ module.exports = {
   isObject,
   isArray,
   isFuntion,
+  isString,
 }

@@ -1,3 +1,4 @@
+require('./lib/polyfill')
 const {program} = require('commander')
 const {print} = require('./lib/utils')
 const {convertType} = require('./lib/tool')
