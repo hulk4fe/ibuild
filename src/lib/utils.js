@@ -1,14 +1,15 @@
 const typeOf = obj => {
-  return Object.prototype.toString.call(obj)
+  const toString$ = {}.toString
+  return toString$.call(obj).slice(8, -1)
 }
 const isObject = obj => {
-  return typeOf(obj) === '[object Object]'
+  return typeOf(obj) === 'Object'
 }
 const isArray = obj => {
-  return typeOf(obj) === '[object Array]'
+  return typeOf(obj) === 'Array'
 }
 const isFuntion = obj => {
-  return typeOf(obj) === '[object Function]'
+  return typeOf(obj) === 'Function'
 }
 const print = (module = '', ...msg) => {
   /* eslint no-console: ["error", { allow: ["info", "warn"] }] */
